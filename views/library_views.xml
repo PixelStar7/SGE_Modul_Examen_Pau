@@ -106,8 +106,8 @@
                                 <field name="issn"></field>
                             </list>
                             <form>
-                                <group>
-                                    <group>
+                                <group col="4">
+                                    <group col="3">
                                         <field name="name"></field>
                                     </group>
                                     <group>
