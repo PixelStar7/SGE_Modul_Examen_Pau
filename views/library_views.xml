@@ -62,5 +62,28 @@
 
 
 
+    <!-- Vista Llista Item -->
+    <record model="ir.ui.view" id="library_item_list">
+        <field name="name">library.item.list</field>
+        <field name="model">library.item</field>
+        <field name="arch" type="xml">
+            <list string="Items">
+                <field name="reference"></field>
+                <field name="title"></field>
+                <field name="category_id"></field>
+            </list>
+        </field>
+    </record>
+
+
+    <!-- Acció Item -->
+    <record model="ir.actions.act_window" id="library_item_action">
+        <field name="name">Items</field>
+        <field name="res_model">library.item</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- Submenu Item -->
+    <menuitem name="Items" id="menu_items" parent="menu_configuration" action="library_item_action"/>
     
 </odoo>
