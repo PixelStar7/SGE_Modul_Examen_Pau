@@ -28,7 +28,7 @@
         <field name="arch" type="xml">
             <form string="Author">
                 <sheet>
-                    <group col="4">
+                    <group col="8">
                         <group>
                             <field name="last_name"></field>
                             <field name="first_name"></field>
@@ -39,16 +39,15 @@
                             <field name="birthdate"></field>
                             <field name="deathdate"></field>
                         </group>
-
-                        <group string="ITEMS">
-                            <field name="item_ids" nolabel="1">
-                                <list>
-                                    <field name="reference"></field>
-                                    <field name="category_id"></field>
-                                    <field name="title"></field>
-                                </list>
-                            </field>
-                        </group>
+                    </group>
+                    <group string="ITEMS">
+                        <field name="item_ids" nolabel="1">
+                            <list>
+                                <field name="reference"></field>
+                                <field name="category_id"></field>
+                                <field name="title"></field>
+                            </list>
+                        </field>
                     </group>
                 </sheet>
             </form>
