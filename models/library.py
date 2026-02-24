@@ -18,6 +18,15 @@ class LibraryAuthor(models.Model):
 
     item_ids = fields.Many2many('library.item', 'library_author_item_rel', 'author_id', 'item_id', 'Authors', readonly=True)
 
+    @api.depends('first_name', 'last_name')
+    def _compute_display_name(self):
+        for author in self:
+            if author.last_name != False and author.first_name != False:
+                # display_name és un camp d'Odoo directament
+                author.display_name = author.last_name + ", " + author.first_name
+            else:
+                author.display_name = "New Author"
+
     @api.constrains('death_date')
     def _check_death_date(self):
         for author in self:
