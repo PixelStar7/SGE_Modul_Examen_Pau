@@ -75,6 +75,53 @@
         </field>
     </record>
 
+    <!-- Vista Form d'Item -->
+     <record model="ir.ui.view" id="library_item_form">
+        <field name="name">library.item.form</field>
+        <field name="model">library.item</field>
+        <field name="arch" type="xml">
+            <form string="Item">
+                <sheet>
+                    <group>
+                        <group string="ITEM">
+                            <group>
+                                <field name="reference"/>
+                                <field name="category_id"/>
+                            </group>
+
+                            <group colspan="2">
+                                <field name="title"/>
+                            </group>
+                        </group>
+
+                        <group string="DESCRIPTION" col="4">
+                            <field name="description" nolabel="1" colspan="4" widget="html" options="{'resizable':true}" placeholder="Lorem ipsum sit amet..."></field>
+                        </group>
+                    </group>
+
+                    <group>
+                        <group string="INPUT DATA">
+                            <field name="date_in"></field>
+                        </group>
+
+                        <group string="OUTPUT DATA">
+                            <field name="date_out"></field>
+                            <field name="reason"></field>
+                        </group>
+
+                        <group string="AUTHORS" colspan="4">
+                            <field name="author_ids" nolabel="1" widget="many2many">
+                                <list create="0" delete="0">
+                                    <field name="display_name" string="Full Name"></field>
+                                    <field name="birthdate"></field>
+                                </list>
+                            </field>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
 
     <!-- Acció Item -->
     <record model="ir.actions.act_window" id="library_item_action">
