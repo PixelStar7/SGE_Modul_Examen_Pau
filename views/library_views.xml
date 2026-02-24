@@ -80,7 +80,37 @@
     </record>
 
     <!-- Vista Formulari Item Category -->
-    
+    <record model="ir.ui.view" id="library_item_category_form">
+        <field name="name">library.item.category.form</field>
+        <field name="model">library.item.category</field>
+        <field name="arch" type="xml">
+            <form string="Item Category">
+                <sheet>
+                    <group col="8">
+                        <group>
+                            <field name="name"></field>
+                            <field name="parent_id"></field>
+                        </group>
+
+                        <group>
+                            <field name="isbn"></field>
+                            <field name="issn"></field>
+                        </group>
+                    </group>
+
+                    <group string="SUBCATEGORIES">
+                        <field name="child_ids" nolabel="1">
+                            <list create="0" delete="0">
+                                <field name="name"></field>
+                                <field name="isbn"></field>
+                                <field name="issn"></field>
+                            </list>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
 
     <!-- Acció Item Category -->
     <record model="ir.actions.act_window" id="library_item_category_action">
