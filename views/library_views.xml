@@ -84,12 +84,12 @@
                 <sheet>
                     <group>
                         <group string="ITEM">
-                            <group>
+                            <group colspan="2">
                                 <field name="reference"/>
                                 <field name="category_id"/>
                             </group>
 
-                            <group colspan="2">
+                            <group>
                                 <field name="title"/>
                             </group>
                         </group>
@@ -109,7 +109,7 @@
                             <field name="reason"></field>
                         </group>
 
-                        <group string="AUTHORS" colspan="4">
+                        <group string="AUTHORS">
                             <field name="author_ids" nolabel="1" widget="many2many">
                                 <list create="0" delete="0">
                                     <field name="display_name" string="Full Name"></field>
