@@ -107,11 +107,13 @@
                             </list>
                             <form>
                                 <group>
-                                    <field name="name"></field>
-                                </group>
-                                <group>
-                                    <field name="isbn"></field>
-                                    <field name="issn"></field>
+                                    <group>
+                                        <field name="name"></field>
+                                    </group>
+                                    <group>
+                                        <field name="isbn"></field>
+                                        <field name="issn"></field>
+                                    </group>
                                 </group>
                             </form>
                         </field>
