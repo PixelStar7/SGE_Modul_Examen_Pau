@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 {
-    'name': 'Examen',
+    'name': 'Library_Tort',
     'version': '1.0',
     'category': 'Education',
-    'summary': 'Examen Management',
+    'summary': 'Library Management',
     'description': """
           Module prepared by department 'Informàtica i comunicacions'
           of Institute Milà i Fontanals in Igualada (Barcelona-Spain)
@@ -16,7 +16,7 @@
     'author': 'Group DAM2 - Course 2025-2026',
     'website': 'http://www.infomila.info',
     'depends': ['base'],
-    'data': ['views/examen_views.xml'],
+    'data': ['views/library_views.xml'],
     'demo': [],
     'installable': True,
     'application': True,
