@@ -100,7 +100,7 @@
 
                     <group string="SUBCATEGORIES">
                         <field name="child_ids" nolabel="1">
-                            <list create="0" delete="0">
+                            <list>
                                 <field name="name"></field>
                                 <field name="isbn"></field>
                                 <field name="issn"></field>
