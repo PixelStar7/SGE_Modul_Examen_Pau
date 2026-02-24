@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <!-- Estructura de navegació Superior -->
+    <menuitem name="School" id="menu_root"/>
+
+    <menuitem name="Configuration" id="menu_configuration" parent="menu_root" sequence="99"/>
+    
+
+    <!-- GESTIÓ -->
+
+    <!-- Vista Llista-->
+    <record model="ir.ui.view" id="school_course_list">
+        <field name="name">school.course.list</field>
+        <field name="model">school.course</field>
+        <field name="arch" type="xml">
+            <!-- Si volguessim editar la llista, posariem editable="Top" o "Bottom"-->
+            <list string="Courses">
+                <field name="name"></field>
+                <!-- El camp marcat amb invisible no apareix a la vista (per a fer referències)-->
+                <field name="hours" invisible="name>'E'"></field>
+                <field name="manager_id"></field>
+                <field name="thematic_id"></field>
+            </list>
+        </field>
+    </record>
+
+    <!-- Vista Formulari -->
+    <record model="ir.ui.view" id="school_course_form">
+        <field name="name">school.course.form</field>
+        <field name="model">school.course</field>
+        <field name="arch" type="xml">
+            <form string="Course">
+                <sheet>
+                    <group> <!-- Tota la pantalla -->
+                        <group>
+                            <field name="name"></field>
+                            <field name="thematic_id"></field>
+                            <field name="hours"></field>
+                            <field name="manager_id"></field>
+                        </group>
+
+                        <group>
+                            <separator string="Summary"></separator>
+                            <field name="summary" nolabel="1" colspan="4" widget="html" options="{'resizable':true}" placeholder="Escriu la descripció..."></field>
+                        </group>
+                    </group>
+
+                    <group>
+                        <group string="Subjects">
+                            <!-- Ara apuntem a la classe intermitja SchoolCourseSubject -->
+                            <!-- TO DO Ordenar assignatures per numero -->
+                            <field name="course_subject_ids" nolabel="1">
+                                <list>
+                                    <field name="number"></field>
+                                    <field name="subject_id" string="Subject"></field>
+                                </list>
+                            </field>
+                        </group>
+
+                        <group string="Editions">
+                            <field name="edition_ids" nolabel="1">
+                                <list>
+                                    <field name="name"></field>
+                                    <field name="date_start"></field>
+                                    <field name="date_end"></field>
+                                </list>
+                                <form>
+                                    <group>
+                                        <group colspan="2">
+                                            <field name="name"></field>
+                                        </group>
+                                        <group>
+                                            <field name="date_start"></field>
+                                        </group>
+                                        <group>
+                                            <field name="date_end"></field>
+                                        </group>
+                                    </group>
+                                </form>
+                            </field>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Acció-->
+    <record model="ir.actions.act_window" id="school_course_action">
+        <field name="name">Courses</field>
+        <field name="res_model">school.course</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- Submenu -->
+    <menuitem name="Courses" id="menu_courses" parent="menu_configuration" action="school_course_action"/>
+
+</odoo>
